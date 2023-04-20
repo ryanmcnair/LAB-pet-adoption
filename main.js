@@ -255,6 +255,7 @@ const pets = [
       <h1 class="card-text">${pet.name}</h1>
       <p class="card-text">${pet.specialSkill}</p>
     </div>
+    <button class="btn btn-danger" id="delete--${pet.id}">Delete</button>
   </div>`;
     };
     renderToDom("#app", domString);
@@ -318,3 +319,16 @@ const pets = [
   }
 
   form.addEventListener('submit', createPet);
+
+  const app = document.querySelector("#app");
+
+  app.addEventListener('click', (e) => {
+    // alert(e.target.id)
+    if(e.target.id.includes("delete")) {
+      const [, id] = e.target.id.split("--");
+      const index = pets.findIndex(e => e.id === Number(id))
+      pets.splice(index, 1);
+      cardsOnDom(pets)
+    }
+
+  })

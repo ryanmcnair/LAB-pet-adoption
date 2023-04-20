@@ -249,11 +249,12 @@ const pets = [
   let domString = "";
 
   for (const pet of array) {
-    domString += `<div class="card" style="width: 18rem;">
+    domString += `<div id="petCard" class="card ${pet.type === "dino" ? "text-bg-secondary mb-3" : (pet.type === "cat" ? "text-bg-success mb-3" : "text-bg-info mb-3")}" style="width: 18rem;">
     <img src="${pet.imageUrl}" class="card-img-top" alt=${pet.name}>
     <div class="card-body">
       <h1 class="card-text">${pet.name}</h1>
       <p class="card-text">${pet.specialSkill}</p>
+      <p class="card-text">${pet.type}</p>
     </div>
     <button class="btn btn-danger" id="delete--${pet.id}">Delete</button>
   </div>`;
@@ -308,12 +309,12 @@ const pets = [
       name: document.querySelector('#name').value,
       color: document.querySelector('#color').value,
       specialSkill: document.querySelector('#specialSkill').value,
-      type: document.querySelector('#type').value,
+      type: document.querySelector('input[name="petType"]:checked').value,
       imageUrl: document.querySelector('#imageUrl').value,
 
     }
 
-    pets.push(newPetObj);
+    pets.unshift(newPetObj);
     cardsOnDom(pets);
     form.reset();
   }

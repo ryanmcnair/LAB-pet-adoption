@@ -2,6 +2,15 @@ body {
     background-color: blanchedalmond;
 }
 
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+header {
+    color:blueviolet;
+}
+
 .buttons {
     display: flex;
     flex-direction: row;
@@ -17,6 +26,14 @@ body {
     margin: 50px;
 }
 
-.card {
+.radio {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+.card cat {
+    /* background-color: antiquewhite;
+    border: 1px black; */
     margin-bottom: 50px;
 }

@@ -9,11 +9,14 @@
     <link rel="stylesheet" href="main.css" />
 </head>
 <body>
+    <header class="header">
+        <h1>Pet Adoption</h1>
+    </header>
     <div class="buttons">
-        <button class="btn btn-danger" id="all-btn">Show All</button>
-        <button class="btn btn-primary" id="cats">Cats</button>
-        <button class="btn btn-primary" id="dogs">Dogs</button>
-        <button class="btn btn-primary" id="dinos">Dinos</button>
+        <button class="btn btn-primary" id="all-btn">Show All</button>
+        <button class="btn btn-success" id="cats">Cats</button>
+        <button class="btn btn-info" id="dogs">Dogs</button>
+        <button class="btn btn-secondary" id="dinos">Dinos</button>
         <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Add a pet
           </button>
@@ -41,10 +44,20 @@
                       <input type="text" class="form-control" id="specialSkill" placeholder="Special Skill" >
                       <label for="floatingInput">Special Skill</label>
                     </div>
-
-                    <div class="form-floating mb-3">
-                      <input type="text" class="form-control" id="type" placeholder="Type" >
-                      <label for="floatingInput">Type</label>
+                    <div class="radio">
+                        Pet Type:
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="petType" id="dinoType" value="dino" checked>
+                            <label class="form-check-label" for="inlineRadio1">Dino</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="petType" id="catType" value="cat">
+                            <label class="form-check-label" for="inlineRadio2">Cat</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="petType" id="dogType" value="dog">
+                            <label class="form-check-label" for="inlineRadio3">Dog</label>
+                          </div>
                     </div>
               
                     <div class="form-floating mb-3">

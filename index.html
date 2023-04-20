@@ -9,9 +9,50 @@
     <link rel="stylesheet" href="main.css" />
 </head>
 <body>
-    <div class="parent">
-        <div id="app"></div>
+    <div class="buttons">
+        <button class="btn btn-danger" id="all-btn">Show All</button>
+        <button class="btn btn-primary" id="cats">Cats</button>
+        <button class="btn btn-primary" id="dogs">Dogs</button>
+        <button class="btn btn-primary" id="dinos">Dinos</button>
+        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Add a pet
+          </button>
     </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">New Pet</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="name" placeholder="Name" required>
+                      <label fo   r="floatingInput">Name</label>
+                    </div>
+              
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="color" placeholder="Color" required>
+                      <label for="floatingInput">Color</label>
+                    </div>
+              
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="specialSkill" placeholder="Special Skill" required>
+                      <label for="floatingInput">Special Skill</label>
+                    </div>
+              
+                    <div class="form-floating mb-3">
+                      <input type="url" class="form-control" id="image" placeholder="image" required>
+                      <label for="floatingInput">Image</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="form-submit">Add Pet</button>
+                  </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div id="app"></div>
     <script src="main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>

@@ -249,12 +249,17 @@ const pets = [
   let domString = "";
 
   for (const pet of array) {
+    let upperPet = pet.type.charAt(0).toUpperCase()
+    + pet.type.slice(1);
+
     domString += `<div id="petCard" class="card ${pet.type === "dino" ? "text-bg-secondary mb-3" : (pet.type === "cat" ? "text-bg-success mb-3" : "text-bg-info mb-3")}" style="width: 18rem;">
-    <img src="${pet.imageUrl}" class="card-img-top" alt=${pet.name}>
-    <div class="card-body">
-      <h1 class="card-text">${pet.name}</h1>
-      <p class="card-text">${pet.specialSkill}</p>
-      <p class="card-text">${pet.type}</p>
+    <div id="petHeader">
+      <h1 class="card-text" >${pet.name}</h1>
+    </div>
+      <img src="${pet.imageUrl}" class="card-img-top" alt=${pet.name}>
+      <div class="card-body">
+      <p class="card-text" id="petText">Pet Type: ${upperPet}</p>
+      <p class="card-text">Special skill: ${pet.specialSkill}</p>
     </div>
     <button class="btn btn-danger" id="delete--${pet.id}">Delete</button>
   </div>`;
